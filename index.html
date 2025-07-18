@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>Деревянная Головоломка с Блоками</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#8B4513">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Деревянная Головоломка">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🧩 Murgabsky play
+            </h1>
+            <div class="game-info">
+                <div class="score-display">
+                    <span class="label">Счет:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="level-display">
+                    <span class="label">Рекорд:</span>
+                    <span id="highScore">0</span>
+                </div>
+                <div class="lines-display">
+                    <span class="label">Линии:</span>
+                    <span id="lines">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <div class="main-board">
+                <canvas id="gameCanvas" width="400" height="400"></canvas>
+                <div id="gameOverScreen" class="game-over-screen hidden">
+                    <h2>Игра окончена!</h2>
+                    <p>Ваш счет: <span id="finalScore">0</span></p>
+                    <button id="restartButton">Новая игра</button>
+                </div>
+            </div>
+            
+            <div class="side-panel">
+                <div class="pieces-container">
+                    <h3>Доступные фигуры</h3>
+                    <div class="piece-slots">
+                        <div class="piece-slot" id="piece1">
+                            <canvas width="80" height="80"></canvas>
+                        </div>
+                        <div class="piece-slot" id="piece2">
+                            <canvas width="80" height="80"></canvas>
+                        </div>
+                        <div class="piece-slot" id="piece3">
+                            <canvas width="80" height="80"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls-info">
+                    <h3>Как играть:</h3>
+                    <div class="control-item">
+                        <span>•</span> Перетаскивайте фигуры на доску
+                    </div>
+                    <div class="control-item">
+                        <span>•</span> Заполняйте линии и квадраты
+                    </div>
+                    <div class="control-item">
+                        <span>•</span> Получайте очки за очистку
+                    </div>
+                </div>
+                
+                <div class="game-buttons">
+                    <button id="newGameButton">Новая игра</button>
+                    <button id="hintButton">Подсказка</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Touch Controls -->
+        <div class="mobile-controls">
+            <div class="control-row">
+                <button id="rotateBtn" class="control-btn">↻</button>
+                <button id="hintBtn" class="control-btn">💡</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
